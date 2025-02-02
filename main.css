@@ -1,0 +1,420 @@
+/* General Variables */
+:root {
+    --primary-color: #3e56f0;
+    --secondary-color: #6c63ff;
+    --background-light: #f4f5f7;
+    --background-dark: #222;
+    --text-dark: #333;
+    --text-light: #fff;
+    --hero-height: 100vh;
+    --font-family: 'Roboto', sans-serif;
+  }
+  
+  /* General Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    background: var(--background-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .navbar a:hover {
+    color: var(--secondary-color);
+  }
+  
+  /* Hero Section */
+  #hero {
+    height: var(--hero-height);
+    background: linear-gradient(to bottom right, var(--primary-color), var(--secondary-color));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-light);
+    text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+  
+  #hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* #hero span {
+    color: var(--secondary-color);
+  }
+   */
+  #hero p {
+    font-size: 1.25rem;
+    max-width: 800px;
+  }
+
+  /* Add smooth fade animation */
+@keyframes fade {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+#changing-role,
+#changing-description {
+  display: inline-block;
+  animation: fade 5s ease-in-out infinite;
+}
+
+  
+  @keyframes fade {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
+  
+ /* About Section */
+#about {
+  background: var(--background-light);
+  padding: 4rem 2rem;
+  text-align: left; /* Align text to the left */
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* Add space between the image and text */
+  flex-wrap: wrap; /* Ensure responsiveness for smaller screens */
+}
+
+#about img {
+  width: 40%; /* Set image width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Add rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for styling */
+}
+
+#about .about-content {
+  max-width: 50%; /* Limit the text width */
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+#about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color:#3e56f0;
+}
+
+  #about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+  }
+  
+  .location {
+    display: flex;
+    align-items: center;
+    font-size: 1rem; /* Slightly smaller than the About Me heading */
+    color: var(-se); /* Adjust based on your theme */
+    margin-top: 0.5rem;
+  }
+  
+  .location i {
+    color: var(--primary-color);
+    font-size: 1.2rem; /* Adjust icon size */
+    margin-right: 8px;
+  }
+  
+
+  #experience {
+    background: var(--background-light);
+    padding: 4rem 2rem;
+    text-align: left;
+  }
+  
+  #experience h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--primary-color);
+  }
+  
+  .experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .experience-item {
+    background: var(--background-dark);
+    color: var(--text-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .experience-item h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .experience-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .experience-item p {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+  
+  .experience-item ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+  }
+  
+  .experience-item ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+
+  
+  
+  /* Projects Section */
+#projects {
+  background: var(--background-light);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+#projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #3e56f0;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project {
+  background: var(--background-dark);
+  color: var(--text-light);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.project span {
+  color: var(--secondary-color); /* Assign a distinct color */
+  font-weight: bold;
+  text-decoration: underline; /* Optional */
+  cursor: pointer; /* Gives a clickable look */
+  transition: color 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.project span:hover {
+  color: var(--primary-color); /* Change color on hover */
+  text-decoration: none; /* Optional: Remove underline on hover */
+}
+
+
+.project a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-decoration: underline;
+}
+
+.project h3, .project p {
+  margin: 0;
+  color: var(--text-light);
+}
+
+#project-detail {
+  margin-top: 80px; /* Adjust to match your navbar height */
+  padding: 2rem;
+  text-align: center;
+}
+
+/* General Project Page Styling */
+.page__content {
+  background: var(--background-light);
+  padding: 4rem 2rem;
+  color: var(--text-dark);
+}
+
+.page__content h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+.project-description {
+  background: var(--background-dark);
+  color: var(--text-light);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+  
+}
+
+.project-description h2 {
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.project-description p {
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.github-link-container {
+  text-align: center; /* Centers the link */
+  margin: 40px 0; /* Adds spacing above and below */
+}
+
+.github-link {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: var(--text-light);
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out;
+}
+
+.github-link:hover {
+  background-color: var(--secondary-color);
+}
+
+
+
+
+.hidden {
+  display: none !important;
+}
+
+/* Show More Button */
+.btn {
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+}
+
+.btn-hidden {
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+}
+
+  
+  /* Contact Section */
+  #contact {
+    background: var(--primary-color);
+    color:#fff;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  #contact {
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+  
+  #contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .contact-icons a {
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+  
+  .contact-icons a:hover {
+    transform: scale(1.1);
+  }
+  
+  .contact-icons img {
+    width: 40px;
+    height: 40px;
+  }
+    
+  /* Footer */
+  footer {
+    background: var(--background-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 1rem;
+  }
+  
